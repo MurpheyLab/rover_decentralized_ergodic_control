@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- This launch file displays the swarm path in rviz /-->
+
+  <!-- rviz will enable us to see the swarm paths -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rover_decentralized_ergodic_control)/rviz/swarm_paths.rviz"
+      required="true" />
+
+  <node pkg="rover_decentralized_ergodic_control" type="rendering.py" name="agent_render" output="screen">
+	      <!-- Comment the agent_id param out if we're using real hardware -->
+	      <param name="agent_id" value="$(arg agent_id)"/>
+	</node>
+
+  <node pkg="rover_decentralized_ergodic_control" type="plotting.py" name="plotting" output="screen" />
+
+</launch>

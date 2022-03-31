@@ -1,0 +1,6 @@
+NE_corner: [42.0585, -87.6755]
+SW_corner: [42.0581, -87.67670000000001]
+dims: [6.0, 2.0]
+dropout_protection_time: 60.0
+origin: [42.0583, -87.6761]
+pts: 225.0

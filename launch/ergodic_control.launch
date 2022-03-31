@@ -1,0 +1,10 @@
+<launch>
+	<arg name="show_in_rviz" default="False"/>
+
+	<rosparam command="load" file="$(find rover_decentralized_ergodic_control)/config/tactic_params_shelby.yaml" ns="control_node" />
+	<node pkg="rover_decentralized_ergodic_control" type="ergodic_planner.py" name="control_node" output="screen">
+	      <!-- Comment the agent_id param out if we're using real hardware -->
+				<param name="agent_id" value="$(arg agent_id)"/>
+				<param name="show_in_rviz" value="$(arg show_in_rviz)"/>
+	</node>
+</launch>

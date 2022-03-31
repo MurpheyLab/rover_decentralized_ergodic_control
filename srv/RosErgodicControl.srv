@@ -1,0 +1,16 @@
+#If this is "start" begin execution.  If it is "stop" stop execution of your service until you receive another "start".
+string signal
+
+#Provides a list of LLA points chosen in the stomp GUI
+geometry_msgs/Pose[] geo_positions
+
+#Indices of HVT positions in geo_positions argument
+string HVT_indices
+
+#Indices of IED positions in geo_positions argument
+string IED_indices
+
+#Indicate whether we are using the tanvas to create target distributions
+string tanvas
+---
+string response

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Define machines here -->
+    <machine name="rover" address="$(arg agent_id)" user="nvidia" env-loader="/home/nvidia/rover/src/rover_ros/rover_decentralized_ergodic_control/start_nu_env.sh"/>
+
+    <rosparam command="load" file="$(find rover_decentralized_ergodic_control)/config/tactic_params_nu.yaml" ns="control_node" />
+    <node machine="rover" pkg="rover_decentralized_ergodic_control" type="ergodic_planner.py" name="control_node" output="screen">
+          <!-- Comment the agent_id param out if we're using real hardware -->
+          <param name="agent_id" value="$(arg agent_id)"/>
+          <param name="show_in_rviz" value="False"/>
+    </node>
+
+</launch>
